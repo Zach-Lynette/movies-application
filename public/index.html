@@ -6,36 +6,47 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-    <form class="newMovieForm">
-        <label for="newMovie">Movie Title:
-            <input id="newMovie" type="text">
-        </label>
-        <select name="rating" id="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <button id="addMovie">Submit</button>
-    </form>
-
-    <div class="container">
-        <!--<h1>Loading...</h1>-->
+    <div class="container"></div>
+    <div class="afterLoad">
+        <h1>Movies!</h1>
+        <div id="addModal" class="modal">
+            <div class="modal-content">
+                <form class="newMovieForm">
+                    <h1>Movie Title:</h1>
+                    <input id="newMovie" type="text">
+                    <select name="rating" id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <hr>
+                    <button id="close" class="close">Close</button>
+                    <button id="addMovie" class="close">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="movieList"></div>
+        <button id="addMovieModal">Add Movie</button>
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <form>
+                    <h1>Edit Movie</h1>
+                    <input type="text" id="editMovie">
+                    <select name="newRating" id="newRating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <hr>
+                    <button id="updateMovie" class="close">Save</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <form class="editMovieForm">
-        <label for="editMovie">Edit Movie
-            <input type="text" id="editMovie">
-        </label>
-        <select name="rating" id="newRating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <button id="updateMovie">Save</button>
-    </form>
 
     <script src="/main.js"></script>
 </body>
