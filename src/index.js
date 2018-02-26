@@ -49,7 +49,7 @@ function updateMovies() {
         $(".editMovieForm").hide();
       let html = "<table><tr><th>Movie</th><th>Rating</th><th> </th></tr>";
       movies.forEach(({title, rating, id}) => {
-        html += `<tr><td>${title}</td><td>${rating}</td><td><button data-movie="${title}" data-rating="${rating}" value="${id}" class="edit">Edit</button><button class="delete" value="${id}">Delete</button></td></tr>`;
+        html += `<tr><td>${title}</td><td class="rating" id="rateStars"><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></td><td><button data-movie="${title}" data-rating="${rating}" value="${id}" class="edit">Edit</button><button class="delete" value="${id}">Delete</button></td></tr>`;
       });
       html += "</table>";
       $(".movieList").html(html);
@@ -108,6 +108,8 @@ $("#addMovieModal").click(() => {
 $("#close").click((e) => {
     e.preventDefault();
     $("#addModal").css("display", "none");
+    $("#newMovie").val("");
+    $("#rating").val("1");
 });
 function deleteMovie() {
     const url = `/api/movies/${id}`;
