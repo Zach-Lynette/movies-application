@@ -47,9 +47,9 @@ function updateMovies() {
     getMovies().then((movies) => {
       $(".afterLoad").show();
         $(".editMovieForm").hide();
-      let html = "<table><tr><th>ID</th><th>Movie</th><th>Rating</th><th> </th></tr>";
+      let html = "<table><tr><th>Movie</th><th>Rating</th><th> </th></tr>";
       movies.forEach(({title, rating, id}) => {
-        html += `<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button data-movie="${title}" data-rating="${rating}" value="${id}" class="edit">Edit</button><button class="delete" value="${id}">Delete</button></td></tr>`;
+        html += `<tr><td>${title}</td><td>${rating}</td><td><button data-movie="${title}" data-rating="${rating}" value="${id}" class="edit">Edit</button><button class="delete" value="${id}">Delete</button></td></tr>`;
       });
       html += "</table>";
       $(".movieList").html(html);

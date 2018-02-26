@@ -1,8 +1,20 @@
 html, body {
     height: 100%;
     background-color: #930A13;
+    background-image: url("https://clipartion.com/wp-content/uploads/2015/11/academy-awards-movie-theater-clipart-free-clip-art-images.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.75vw;
 }
-
+h1 {
+    font-family: 'Limelight', cursive;
+    margin: 0;
+    background: linear-gradient(#fef1b9, #946d2f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .container {
     position: relative;
     top: 50%;
@@ -18,11 +30,18 @@ img {
 .afterLoad {
     text-align: center;
 }
+.movieList {
+    height: 25vw;
+    overflow: auto;
+    margin: 18.5vw auto 0 auto;
+}
 table {
     margin: 0 auto;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: white;
+    width: 49vw;
+    height: 23vw;
+    /*background-color: white;*/
 }
 .modal {
     display: none; /* Hidden by default */
@@ -65,4 +84,31 @@ table {
 .close:hover {
 
 }
+.edit, .delete{
+    background: linear-gradient(#fef1b9, #946d2f);
+    border: 1px solid #946d2f;
+    width: 5vw;
+    height: 2vw;
+    border-radius: 10px;
+    font-size: 1vw;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    cursor: pointer;
+    margin: 1px;
+}
+.edit:hover, .delete:hover {
+    background: linear-gradient(#353535, #000);
+    color: white;
+}
+#addMovieModal {
+    background: linear-gradient(#353535, #000);
+    border: 1px solid #946d2f;
+    width: 15vw;
+    height: 2vw;
+    color: white;
+    border-radius: 10px;
+    font-size: 1vw;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    cursor: pointer;
+}
+
 
