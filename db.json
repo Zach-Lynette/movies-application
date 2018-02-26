@@ -21,7 +21,7 @@
       "id": 4
     },
     {
-      "title": "50 First Dates",
+      "title": "50 First Date",
       "rating": "3",
       "id": 5
     },
@@ -29,6 +29,16 @@
       "title": "Adding New Movie",
       "rating": "1",
       "id": 6
+    },
+    {
+      "title": "stuff",
+      "rating": "1",
+      "id": 7
+    },
+    {
+      "title": "some other movie",
+      "rating": "5",
+      "id": 8
     }
   ]
 }

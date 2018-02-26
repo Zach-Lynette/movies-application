@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    background-color: #930A13;
 }
 
 .container {
@@ -19,6 +20,9 @@ img {
 }
 table {
     margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
 }
 .modal {
     display: none; /* Hidden by default */
