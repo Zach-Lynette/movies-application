@@ -32,6 +32,7 @@ $("#addMovie").click((e) => {
             .then(movie => {
                 updateMovies();
                 $("#addMovie").html("Submit");
+                $("#addModal").css("display", "none");
             })
             .catch(error => console.log(error));
         $("#newMovie").val("");
@@ -60,7 +61,7 @@ function updateMovies() {
             $("#editMovie").val(movie);
             $("#newRating").val(rating);
             // $(".editMovieForm").show();
-            $(".modal").css("display", "block");
+            $("#editModal").css("display", "block");
         });
         $(".delete").click((e) => {
             id = e.target.value;
@@ -75,9 +76,8 @@ function updateMovies() {
     $("#updateMovie").click((e) => {
             console.log(e);
             e.preventDefault();
-            // $("#updateMovie").html("<img class='smallLoading' src='https://media1.tenor.com/images/d6cd5151c04765d1992edfde14483068/tenor.gif?itemid=5662595'>");
+            $("#updateMovie").html("<img class='smallLoading' src='https://media1.tenor.com/images/d6cd5151c04765d1992edfde14483068/tenor.gif?itemid=5662595'>");
             saveMovie();
-            $("#editModal").css("display", "none");
         });
 function saveMovie() {
     if ($("#editMovie").val() !== "") {
@@ -93,10 +93,11 @@ function saveMovie() {
         fetch(url, options)
             .then(movie => {
                 updateMovies();
-                $(".editMovieForm").hide();
+                // $(".editMovieForm").hide();
                 $("#editMovie").val("");
                 $("#newRating").val("1");
                 $("#updateMovie").html("Save");
+                $("#editModal").css("display", "none");
             })
             .catch();
     }
