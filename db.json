@@ -1,13 +1,13 @@
 {
   "movies": [
     {
-      "title": "movie",
-      "rating": "1",
+      "title": "Star Wars",
+      "rating": "4",
       "id": 1
     },
     {
-      "title": "sdfasdf",
-      "rating": "1",
+      "title": "Harry Potter",
+      "rating": "5",
       "id": 2
     }
   ]

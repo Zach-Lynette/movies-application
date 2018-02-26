@@ -17,20 +17,24 @@ $("form").hide();
 
 $("#addMovie").click((e) => {
     e.preventDefault();
-    const movie = {title: $("#newMovie").val(), rating: $("#rating").val(), id: ""};
-    const url = '/api/movies';
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(movie),
-    };
-    fetch(url, options)
-        .then(movie => updateMovies())
-        .catch(error => console.log(error));
-    $("#newMovie").val("");
-    $("#rating").val("1");
+    if ($("#newMovie").val() !== "") {
+        const movie = {title: $("#newMovie").val(), rating: $("#rating").val(), id: ""};
+        const url = '/api/movies';
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(movie),
+        };
+        fetch(url, options)
+            .then(movie => updateMovies())
+            .catch(error => console.log(error));
+        $("#newMovie").val("");
+        $("#rating").val("1");
+    } else {
+        alert("Oops, there's nothing here!");
+    }
 });
 updateMovies();
 function updateMovies() {
@@ -62,7 +66,7 @@ function updateMovies() {
             saveMovie();
         });
 function saveMovie() {
-        console.log(id);
+    if ($("#editMovie").val() !== "") {
         const movie = {title: $("#editMovie").val(), rating: $("#newRating").val(), id: ""};
         const url = `/api/movies/${id}`;
         const options = {
@@ -72,8 +76,6 @@ function saveMovie() {
             },
             body: JSON.stringify(movie)
         };
-        console.log(url);
-        console.log(options);
         fetch(url, options)
             .then(movie => {
                 updateMovies();
@@ -82,17 +84,16 @@ function saveMovie() {
                 $("#newRating").val("1");
             })
             .catch();
+    }
 }
 
 function deleteMovie() {
-    // const movie = {title: $("#editMovie").val(), rating: $("#newRating").val(), id: ""};
     const url = `/api/movies/${id}`;
     const options = {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
-        },
-        // body: JSON.stringify(movie)
+        }
     };
     fetch(url, options)
         .then( () => updateMovies())
