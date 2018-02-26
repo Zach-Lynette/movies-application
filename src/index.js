@@ -49,11 +49,13 @@ function updateMovies() {
         $(".editMovieForm").hide();
       let html = "<table><tr><th>Movie</th><th>Rating</th><th> </th></tr>";
       movies.forEach(({title, rating, id}) => {
-        html += `<tr><td>${title}</td><td class="rating" id="rateStars"><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></td><td><button data-movie="${title}" data-rating="${rating}" value="${id}" class="edit">Edit</button><button class="delete" value="${id}">Delete</button></td></tr>`;
+        html += `<tr><td>${title}</td><td class="rating">`;
+        html += starRating(rating);
+        html += `</td><td><button data-movie="${title}" data-rating="${rating}" value="${id}" class="edit">Edit</button><button class="delete" value="${id}">Delete</button></td></tr>`;
       });
-      html += "</table>";
-      $(".movieList").html(html);
-      $(".container").hide();
+        html += "</table>";
+        $(".movieList").html(html);
+        $(".container").hide();
         $(".edit").click((e) => {
              id = e.target.value;
             let movie = e.target.dataset.movie;
@@ -122,4 +124,18 @@ function deleteMovie() {
     fetch(url, options)
         .then( () => updateMovies())
         .catch();
+}
+function starRating(rating) {
+    let html = "";
+    for(let i = 5; i>= 1; i--) {
+        if (i > rating) {
+            html += `<span data-rating=${i}>&#9734</span>`
+        }
+        else if (i <= rating) {
+            html += `<span data-rating=${i}>&#9733</span>`
+        }
+
+    }
+    console.log(html);
+    return html;
 }

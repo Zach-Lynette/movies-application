@@ -7,12 +7,12 @@
     },
     {
       "title": "Adding a Movie",
-      "rating": "1",
+      "rating": "5",
       "id": 4
     },
     {
       "title": "Another Movie",
-      "rating": "1",
+      "rating": "3",
       "id": 5
     },
     {
@@ -41,14 +41,14 @@
       "id": 10
     },
     {
-      "title": "too many",
-      "rating": "1",
-      "id": 11
-    },
-    {
       "title": "batman",
       "rating": "1",
       "id": 12
+    },
+    {
+      "title": "2 Star Movie",
+      "rating": "2",
+      "id": 13
     }
   ]
 }
