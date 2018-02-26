@@ -15,6 +15,9 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+th {
+    font-family: 'Limelight', cursive;
+}
 .container {
     position: relative;
     top: 50%;
@@ -31,9 +34,9 @@ img {
     text-align: center;
 }
 .movieList {
-    height: 25vw;
+    height: 24vw;
     overflow: auto;
-    margin: 18.5vw auto 0 auto;
+    margin: 18.5vw auto .5vw auto;
 }
 table {
     margin: 0 auto;
