@@ -12,7 +12,7 @@ const $ = require('jquery');
 
 let id;
 
-$(".container").html("<img src='https://media1.tenor.com/images/d6cd5151c04765d1992edfde14483068/tenor.gif?itemid=5662595'>");
+$(".container").html("<img src='https://media1.tenor.com/images/bddd3efa10babe9f55afa16aa862b104/tenor.gif?itemid=4713516'>");
 $(".afterLoad").hide();
 
 $("#addMovie").click((e) => {
@@ -107,12 +107,6 @@ function saveMovie() {
 $("#addMovieModal").click(() => {
     $("#addModal").css("display", "block");
 });
-$("#close").click((e) => {
-    e.preventDefault();
-    $("#addModal").css("display", "none");
-    $("#newMovie").val("");
-    $("#rating").val("1");
-});
 function deleteMovie() {
     const url = `/api/movies/${id}`;
     const options = {
@@ -129,13 +123,19 @@ function starRating(rating) {
     let html = "";
     for(let i = 5; i>= 1; i--) {
         if (i > rating) {
-            html += `<span data-rating=${i}>&#9734</span>`
+            html += `<span class="hover" data-rating=${i}>&#9734</span>`
         }
         else if (i <= rating) {
-            html += `<span data-rating=${i}>&#9733</span>`
+            html += `<span class="hover" data-rating=${i}>&#9733</span>`
         }
 
     }
     console.log(html);
     return html;
 }
+$("#close").click((e) => {
+    e.preventDefault();
+    $("#addModal").css("display", "none");
+    $("#newMovie").val("");
+    $("#rating").val("1");
+});

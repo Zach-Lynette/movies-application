@@ -1,54 +1,49 @@
 {
   "movies": [
     {
-      "title": "Star Wars Episode IV",
-      "rating": "4",
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "rating": "5",
       "id": 1
     },
     {
-      "title": "Adding a Movie",
+      "title": "Black Panther",
+      "rating": "5",
+      "id": 2
+    },
+    {
+      "title": "Sharknado",
+      "rating": "1",
+      "id": 3
+    },
+    {
+      "title": "Star Wars: Empire Strikes Back",
       "rating": "5",
       "id": 4
     },
     {
-      "title": "Another Movie",
-      "rating": "3",
+      "title": "Star Wars Episode 1",
+      "rating": "2",
       "id": 5
     },
     {
-      "title": "Movies Movies Movies",
-      "rating": "1",
+      "title": "Justice League",
+      "rating": "2",
       "id": 6
     },
     {
-      "title": "Too many movies",
-      "rating": "1",
+      "title": "Trolls",
+      "rating": "3",
       "id": 7
     },
     {
-      "title": "So Many",
+      "title": "Home",
       "rating": "1",
       "id": 8
     },
     {
-      "title": "Hey Hey Hey",
-      "rating": "1",
+      "title": "Coco",
+      "rating": "5",
       "id": 9
-    },
-    {
-      "title": "all the things",
-      "rating": "1",
-      "id": 10
-    },
-    {
-      "title": "batman",
-      "rating": "1",
-      "id": 12
-    },
-    {
-      "title": "2 Star Movie",
-      "rating": "2",
-      "id": 13
     }
   ]
 }
